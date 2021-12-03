@@ -1,0 +1,349 @@
+[
+    {
+        "id": "c87baf1f8b8a46dd",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f9c23d23.c8c24",
+        "type": "exec",
+        "z": "c87baf1f8b8a46dd",
+        "command": "vcgencmd measure_temp",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "RP_CPU Temperature",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "b38307be6a866d0e",
+                "4c96fe68d6f7676c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b38307be6a866d0e",
+        "type": "ui_text",
+        "z": "c87baf1f8b8a46dd",
+        "group": "bf3dc9b99747b976",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temp degree",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 510,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c83b0c4ce0e7025b",
+        "type": "ui_button",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "group": "bf3dc9b99747b976",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Actualiser",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "f9c23d23.c8c24"
+            ]
+        ]
+    },
+    {
+        "id": "78a0f9fe9d8ebeca",
+        "type": "inject",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "f9c23d23.c8c24"
+            ]
+        ]
+    },
+    {
+        "id": "4fe8d2b4aa667a2b",
+        "type": "ui_gauge",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "group": "bf3dc9b99747b976",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU_T",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ffffff",
+            "#e4254b",
+            "#a61717"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4c96fe68d6f7676c",
+        "type": "change",
+        "z": "c87baf1f8b8a46dd",
+        "name": "Number of TEMP",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "temp=",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "4fe8d2b4aa667a2b"
+            ]
+        ]
+    },
+    {
+        "id": "5c6b44c4ce933b9d",
+        "type": "ui_gauge",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "group": "64bd50849f9ee56d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "TEMP ",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 650,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b3e33bc174177e16",
+        "type": "inject",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "cca7d46ae02d63ee"
+            ]
+        ]
+    },
+    {
+        "id": "cca7d46ae02d63ee",
+        "type": "openweathermap",
+        "z": "c87baf1f8b8a46dd",
+        "name": "Météo à Paris",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Paris",
+        "country": "France",
+        "language": "fr",
+        "x": 280,
+        "y": 440,
+        "wires": [
+            [
+                "9413d6ff4e22a494"
+            ]
+        ]
+    },
+    {
+        "id": "9413d6ff4e22a494",
+        "type": "change",
+        "z": "c87baf1f8b8a46dd",
+        "name": "Number of TEMP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.tempc",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "5c6b44c4ce933b9d",
+                "8eb4dcccc8d37560",
+                "23aedcac88979afe"
+            ]
+        ]
+    },
+    {
+        "id": "8eb4dcccc8d37560",
+        "type": "ui_text",
+        "z": "c87baf1f8b8a46dd",
+        "group": "64bd50849f9ee56d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "TEMP en °C",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "23aedcac88979afe",
+        "type": "ui_chart",
+        "z": "c87baf1f8b8a46dd",
+        "name": "",
+        "group": "64bd50849f9ee56d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Graphic Temperature ",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-5",
+        "ymax": "10",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf3dc9b99747b976",
+        "type": "ui_group",
+        "name": "TEMP_Display",
+        "tab": "6e30736125c80628",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "64bd50849f9ee56d",
+        "type": "ui_group",
+        "name": "Weather in Paris",
+        "tab": "6e30736125c80628",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6e30736125c80628",
+        "type": "ui_tab",
+        "name": "TEMPRATURE",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
