@@ -36,7 +36,7 @@ while [ "$ch" = "y" -o "$ch" = "Y" ]; do
 		    done
  		    echo "scale=2; (($var1 / $var2))" | bc -l ;; #on prend que deux valeurs après la virgule au cas
 							         #où le résultat est float.
-		* ) echo "Il faut choisir de 1 à 4 !"
+		* ) echo "Erreur !"
 	esac
 echo -n "Voulez vous continuer Y/N ? "
 read ch
