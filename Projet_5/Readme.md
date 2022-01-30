@@ -7,23 +7,23 @@ Ensuite , développer une application Node Red capable de lire des données BLE.
 ## Installation
 On  installe Buildroot
 
-bash
+```bash
 sudo apt-get install libncurses5-dev bc
 sudo apt install build-essential
 sudo apt-get install manpages-dev unzip
 sudo apt-get upgrade 
 sudo apt-get update
 git clone https://github.com/buildroot/buildroot.git
-
+```
 
 
 Pour configurer et puis générer l'image voulu 
 
-bash
+```bash
 make raspberrypi3_defconfig #fichier de configuration pour notre platforme RP3
 make menuconfig #Personnalisation des paramètres ( augmentez la taille de l'omage finale à 200Mb)
 make #Générer l'image
-
+```
 
 
 
