@@ -1,4 +1,4 @@
-# Readme
+# Readme OUICH Jalaleddine / BAAZIZ Elmehdi
 
 Ce projet consiste à réaliser une image minimale de Linux à travers l'outil Buildroot.
 
@@ -61,4 +61,4 @@ Mais on a pas pu établir la connexion entre la RP3 et nos téléphones portable
 
 ## Difficultés rencontrées
 
-[ ] Problème lors de la communication BLE
+![ ] Problème lors de la communication BLE
