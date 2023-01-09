@@ -1,4 +1,4 @@
-# Raspberry_PI_PROJECT
+# Raspberry_PI_miniPROJECT
 
 Salut, 
 
