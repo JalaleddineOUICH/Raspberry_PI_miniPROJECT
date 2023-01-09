@@ -1,4 +1,4 @@
-# Readme OUICH Jalaleddine / BAAZIZ Elmehdi
+# Readme OUICH Jalaleddine 
 
 Ce projet consiste à réaliser une image minimale de Linux à travers l'outil Buildroot.
 
@@ -52,8 +52,6 @@ Puisque l'image est volumineuse , vous la trouveriez sur le lien Drive suivant :
 On a réalisé le schéma suivant  :
 
 ![](Capture.JPG)
-
-Mais on a pas pu établir la connexion entre la RP3 et nos téléphones portables.
 
 
 
