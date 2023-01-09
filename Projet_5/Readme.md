@@ -59,4 +59,4 @@ On a réalisé le schéma suivant  :
 
 ## Difficultés rencontrées
 
-=> Problème lors de la communication BLE
+=> Communication BLE
