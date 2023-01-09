@@ -1,3 +1,4 @@
+Comme étant mon tout premier programme en Bash j'ai pensé à créer une calculatrice sur ma RP.  
 J'ai commencé le programme par l'affichage du Menu, c'est les différentes opération que l'utilisateur pourra utilisé en choisissant de 1 à 5.  
 
 La programme contient 4 variable :  
